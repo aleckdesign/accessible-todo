@@ -1,0 +1,114 @@
+@use "abstracts/variables" as *;
+
+.todo__input {
+  width: 90%;
+  height: 4rem;
+  font-size: 1.8rem;
+  background-color: transparent;
+  border: none;
+  padding: 1rem;
+
+  &:focus {
+    outline: 1px dotted $clr-primary-blue;
+    outline-style: dashed;
+  }
+}
+
+.todo__btn-check {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  padding: 1rem;
+  border: none;
+  background-color: $clr-dark-mode-dark-gray-blue;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 1rem;
+  z-index: 2;
+
+  &:hover {
+    background-image: $grad-check;
+  }
+
+  &::before {
+    content: "";
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    z-index: 1;
+    position: absolute;
+  }
+
+  &:hover::after {
+    background-color: $clr-dark-mode-vdark-blue;
+  }
+
+  &:checked {
+    background-image: url(/images/icon-check.svg), $grad-check;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border: none;
+
+    .todo__btn::after {
+      background-color: transparent;
+    }
+  }
+
+  &--2 {
+    &:hover {
+      background-image: none;
+      cursor: initial;
+    }
+  }
+}
+
+.todo__order {
+  position: absolute;
+  z-index: 2;
+  right: 5rem;
+  width: 5rem;
+  height: 3rem;
+  font-size: 1.6rem;
+  border-radius: 5px;
+  text-align: center;
+  appearance: textfield;
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+  transition: all 0.3s;
+}
+
+////////////////////////////////////////////
+///////// THEME CONTROL
+
+.theme__btn {
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
+  border: none;
+}
+
+.a11y {
+  margin-right: 2rem;
+
+  &__check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 2rem;
+    height: 2rem;
+    padding: 0 3px;
+    border-radius: 3rem;
+    background-color: $clr-dark-mode-vdark-blue;
+    border: none;
+
+    cursor: pointer;
+    transition: 0.5s;
+  }
+}

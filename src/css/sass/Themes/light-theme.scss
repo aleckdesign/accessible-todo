@@ -1,0 +1,166 @@
+@use "abstracts/variables" as *;
+
+.light-theme,
+.light-theme--a11y {
+  background-color: $clr-light-mode-gray-blue;
+
+  .header {
+    background-image: url(/images/bg-desktop-light.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .todo__container {
+    background-color: $clr-light-mode-gray;
+  }
+
+  .todo {
+    &__create {
+      background-color: $clr-light-mode-gray;
+    }
+
+    &__input {
+      color: $clr-light-mode-vdark-gray-blue;
+    }
+
+    &__panel {
+      background-color: $clr-light-mode-gray;
+
+      &:hover {
+        background-color: darken($color: $clr-light-mode-gray, $amount: 5);
+      }
+    }
+
+    &__order {
+      background-color: transparent;
+      color: rgb(0, 0, 0);
+      border: 2px solid $clr-dark-mode-dark-gray-blue;
+
+      &:hover {
+        border: 3px solid $clr-primary-blue;
+      }
+    }
+
+    &__controls {
+      background-color: $clr-light-mode-gray;
+    }
+
+    &__footer {
+      background-color: $clr-light-mode-gray;
+    }
+
+    &__over {
+      background-color: $clr-primary-blue;
+      box-shadow: inset 0 0px 5px 5px rgba(#000, 0.2);
+    }
+
+    .select {
+      &__label {
+        &:hover {
+          color: #000;
+        }
+      }
+    }
+  }
+
+  .todo-edit {
+    background-color: $clr-light-mode-gray;
+
+    &__title,
+    &__body {
+      color: $clr-light-mode-vdark-gray-blue;
+    }
+  }
+
+  /////////////////////////////////////////
+  // TYPOGRAPHY
+
+  .heading-1 {
+    color: $clr-light-mode-vdark-gray-blue;
+
+    &.complete {
+      text-decoration: line-through;
+      text-decoration-color: rgb(114, 114, 114);
+      color: $clr-dark-mode-dark-gray-blue;
+    }
+
+    &--over {
+      color: black;
+      font-weight: 700;
+    }
+  }
+
+  .heading-2 {
+    color: $clr-light-mode-vdark-gray-blue;
+  }
+
+  /////////////////////////////////////////
+  // BUTTONS
+
+  .todo__btn-check {
+    &::before {
+      background-color: $clr-light-mode-gray-blue;
+    }
+
+    &:checked {
+      &::before {
+        background-color: transparent;
+      }
+    }
+  }
+
+  .todo__del {
+    color: $clr-dark-mode-gray-blue;
+
+    &:hover,
+    &:focus {
+      color: #000;
+      border: 1px dashed red;
+    }
+  }
+
+  .clear {
+    &:hover {
+      color: #000;
+    }
+  }
+
+  #create-todo-btn {
+    color: $clr-light-mode-vdark-gray-blue;
+
+    &:hover {
+      color: #000;
+    }
+  }
+
+  .theme {
+    &__slider {
+      background-color: $clr-light-mode-gray;
+    }
+  }
+
+  ///////////////////////////////////////////////////////
+  // ACCESSIBILITY MODIFIER
+
+  &--a11y {
+    * {
+      &:focus {
+        outline: 2px solid $clr-a11y-focus-2;
+      }
+    }
+
+    .todo__del {
+      &:focus {
+        border: none;
+      }
+    }
+
+    .select {
+      &__btn {
+        &:focus ~ .select__label {
+          outline: 2px solid $clr-a11y-focus-2;
+        }
+      }
+    }
+  }
+}

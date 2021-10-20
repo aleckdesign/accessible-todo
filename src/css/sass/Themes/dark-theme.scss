@@ -1,0 +1,180 @@
+@use "abstracts/variables" as *;
+
+.dark-theme,
+.dark-theme--a11y {
+  background-color: $clr-dark-mode-vdark-blue;
+
+  .header {
+    background-image: $grad-header, url(/images/pexels-pixabay-258112.jpg);
+    background-repeat: no-repeat;
+    background-position: 0% 70%;
+    background-size: cover;
+  }
+
+  .todo__container {
+    background-color: $clr-dark-mode-vdark-gray-blue;
+  }
+
+  .todo {
+    &__create {
+      background-color: $clr-dark-mode-vdark-desat-blue;
+    }
+
+    &__input {
+      color: $clr-dark-mode-light-blue;
+    }
+
+    &__panel {
+      background-color: $clr-dark-mode-vdark-desat-blue;
+
+      &:hover {
+        background-color: lighten(
+          $color: $clr-dark-mode-vdark-desat-blue,
+          $amount: 6
+        );
+      }
+    }
+
+    &__active {
+      background-color: rgba($clr-primary-blue, 0.3);
+      border: 2px solid $clr-primary-blue;
+
+      &--controls {
+        background-color: lighten(
+          $color: $clr-dark-mode-vdark-desat-blue,
+          $amount: 10
+        );
+        border: none;
+      }
+    }
+
+    &__order {
+      background-color: transparent;
+      color: #fff;
+      border: 2px solid $clr-dark-mode-dark-gray-blue;
+
+      &:hover {
+        border: 3px solid $clr-primary-blue;
+      }
+    }
+
+    &__controls {
+      background-color: $clr-dark-mode-vdark-desat-blue;
+    }
+
+    &__footer {
+      background-color: $clr-dark-mode-vdark-desat-blue;
+    }
+
+    &__over {
+      background-color: $clr-primary-blue;
+      box-shadow: inset 0 0px 5px 5px rgba(#000, 0.6);
+    }
+
+    .select {
+      &__label {
+        &:hover,
+        &:focus {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .todo-edit {
+    background-color: $clr-dark-mode-vdark-desat-blue;
+
+    &__title,
+    &__body {
+      color: #fff;
+    }
+  }
+
+  /////////////////////////////////////////
+  // TYPOGRAPHY
+
+  .heading-1 {
+    color: $clr-dark-mode-light-blue;
+
+    &.complete {
+      text-decoration: line-through;
+      text-decoration-color: rgb(114, 114, 114);
+      color: $clr-dark-mode-dark-gray-blue;
+    }
+
+    &--over {
+      color: black;
+      font-weight: 700;
+    }
+  }
+
+  .heading-2 {
+    color: $clr-dark-mode-gray-blue;
+  }
+
+  /////////////////////////////////////////
+  // BUTTONS
+
+  .todo__btn-check {
+    &::before {
+      background-color: $clr-dark-mode-vdark-blue;
+    }
+
+    &:checked {
+      &::before {
+        background-color: transparent;
+      }
+    }
+  }
+
+  .todo__del {
+    color: $clr-dark-mode-gray-blue;
+
+    &:hover,
+    &:focus {
+      color: #fff;
+      border: 1px dashed red;
+    }
+  }
+
+  .clear {
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  #create-todo-btn {
+    color: $clr-dark-mode-light-blue;
+  }
+
+  .theme {
+    &__slider {
+      background-color: $clr-dark-mode-vdark-blue;
+    }
+  }
+
+  ///////////////////////////////////////////////////////
+  // ACCESSIBILITY MODIFIER
+
+  &--a11y {
+    * {
+      &:focus {
+        outline: 2px solid $clr-a11y-focus;
+      }
+    }
+
+    .todo__del {
+      &:focus {
+        border: none;
+      }
+    }
+
+    .select {
+      &__btn {
+        &:focus ~ .select__label {
+          outline: 2px solid $clr-a11y-focus;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,116 @@
+@use "abstracts/variables" as *;
+
+//////////////////////////////////////////////
+// Create Todo
+
+#create-todo-btn {
+  width: 10rem;
+  height: 3.5rem;
+  font-size: 1.8rem;
+  font-family: "Josefin Sans", sans-serif;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid $clr-primary-blue;
+  letter-spacing: 1px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s;
+  justify-self: end;
+
+  &:hover {
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0rem 0rem 1rem 0.5rem rgba($clr-primary-blue, 0.8);
+  }
+
+  &:active {
+    transform: scale(1);
+  }
+}
+
+//////////////////////////////////////////////
+// Open / Edit Todo
+
+.todo__edit {
+  border: none;
+  cursor: pointer;
+
+  height: 100%;
+  width: 75%;
+  background-color: transparent;
+  position: absolute;
+  z-index: 1;
+  left: 5rem;
+  border: none;
+  outline: none;
+}
+
+//////////////////////////////////////////////
+// Delete Todo
+
+.todo__del {
+  font-size: 2rem;
+  font-family: "Josefin Sans", sans-serif;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  right: 1rem;
+  padding: 5px 8px 2px 8px;
+
+  position: absolute;
+  z-index: 2;
+}
+
+//////////////////////////////////////////////
+// Select radio buttons to sort list
+
+.select {
+  &__btn {
+    &:focus ~ .select__label {
+      outline: 2px solid rgba($clr-primary-blue, 0.8);
+    }
+    appearance: none;
+    position: relative;
+    opacity: 0;
+  }
+
+  &__btn:checked ~ .select__label {
+    color: $clr-primary-blue;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+
+  &__label {
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    position: absolute;
+
+    &:hover {
+      // font-weight: 700;
+      transform: scale(1.05);
+    }
+  }
+}
+
+//////////////////////////////////////////////
+// Clear all completed todos
+
+.clear {
+  background-color: transparent;
+  border: none;
+  font-size: 1.8rem;
+  font-family: "Josefin Sans", sans-serif;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  @media only screen and (max-width: 600px) {
+    // position: absolute;
+    bottom: 0;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}

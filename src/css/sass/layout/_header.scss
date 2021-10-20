@@ -1,0 +1,27 @@
+.header {
+  grid-column: 1/4;
+
+  display: grid;
+  grid-template-columns:
+    minmax(2rem, 1fr) minmax(25rem, 70rem)
+    minmax(2rem, 1fr);
+  grid-template-columns: subgrid;
+  height: 30rem;
+
+  &__content {
+    grid-column: 2/3;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10rem;
+    height: max-content;
+  }
+
+  &__title {
+    font-size: 4rem;
+    letter-spacing: 1rem;
+    color: #fff;
+    flex: 1;
+  }
+}

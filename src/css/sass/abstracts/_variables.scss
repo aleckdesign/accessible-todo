@@ -1,0 +1,32 @@
+$clr-primary-blue: hsl(220, 98%, 61%);
+$grad-check: linear-gradient(
+  to bottom,
+  hsl(192, 100%, 67%),
+  hsl(280, 87%, 65%)
+);
+$grad-header: linear-gradient(
+  to right,
+  rgba(60, 106, 255, 0.5) 30%,
+  rgba(191, 28, 255, 0.6)
+);
+
+//  Light Theme
+
+$clr-light-mode-gray: hsl(0, 0%, 98%);
+$clr-light-mode-gray-blue: hsl(236, 33%, 92%);
+$clr-light-mode-gray-blue-2: hsl(233, 11%, 84%);
+$clr-light-mode-dark-gray-blue: hsl(236, 9%, 61%);
+$clr-light-mode-vdark-gray-blue: hsl(235, 19%, 35%);
+
+//  Dark Theme
+
+$clr-dark-mode-vdark-blue: hsl(235, 21%, 11%);
+$clr-dark-mode-vdark-desat-blue: hsl(235, 24%, 19%);
+$clr-dark-mode-light-blue: hsl(234, 39%, 85%);
+$clr-dark-mode-light-blue-hover: hsl(236, 33%, 92%);
+$clr-dark-mode-gray-blue: hsl(232, 24%, 68%);
+$clr-dark-mode-dark-gray-blue: hsl(234, 15%, 53%);
+$clr-dark-mode-vdark-gray-blue: hsl(237, 14%, 26%);
+
+$clr-a11y-focus: hsl(184, 100%, 44%);
+$clr-a11y-focus-2: hsl(347, 100%, 59%);

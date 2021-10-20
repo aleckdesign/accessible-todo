@@ -1,0 +1,201 @@
+@use "abstracts/variables" as *;
+
+.todo {
+  grid-column: 2/3;
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 1rem 2rem rgba(#000, 0.2);
+    overflow: hidden;
+    height: fit-content;
+    max-height: 60rem;
+    overflow-y: scroll;
+  }
+
+  &__create {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    grid-template-rows: 6rem;
+    align-items: center;
+
+    padding: 0 3rem;
+    margin-bottom: 3rem;
+    border-radius: 5px;
+    box-shadow: 0 1rem 2rem rgba(#000, 0.2);
+
+    @media only screen and (max-width: 600px) {
+      grid-template-columns: 70% 30%;
+      padding-right: 2rem;
+    }
+
+    & label {
+      visibility: hidden;
+      position: absolute;
+    }
+  }
+
+  &__panel {
+    display: flex;
+    align-items: center;
+
+    border-bottom: 1px solid $clr-dark-mode-gray-blue;
+    transition: all 0.3s;
+    min-height: 6rem;
+    cursor: pointer;
+    position: relative;
+
+    @media only screen and (max-width: 600px) {
+      grid-template-columns: 15% 75% 10%;
+    }
+  }
+
+  &__title {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 6.5rem;
+    background-color: transparent;
+  }
+
+  &__over {
+    height: 8rem;
+  }
+
+  &__controls {
+    display: grid;
+    grid-template-columns: 1fr 50% 1fr;
+    grid-template-rows: 2.5rem;
+    align-items: center;
+    justify-items: center;
+    padding: 1.5rem 1rem;
+    border-top-left-radius: 0.6rem;
+    border-top-right-radius: 0.6rem;
+    border-bottom: 1px solid $clr-dark-mode-gray-blue;
+
+    @media only screen and (max-width: 600px) {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+
+  &__footer {
+    height: 3rem;
+    border-bottom-left-radius: 0.6rem;
+    border-bottom-right-radius: 0.6rem;
+  }
+
+  .select {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    width: 100%;
+    margin-left: -1.5rem;
+    border: none;
+    // background-color: red;
+
+    & legend {
+      visibility: hidden;
+      position: absolute;
+    }
+
+    &__btn-container {
+      position: relative;
+      // background-color: aliceblue;
+      // width: 10rem;
+      height: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  #select-2 {
+    margin-left: 6.5rem;
+    margin-right: 10rem;
+  }
+}
+
+.todo-edit {
+  justify-self: center;
+  align-self: center;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: absolute;
+  top: 10rem;
+  height: 50%;
+  width: 80%;
+  padding: 1rem;
+  border-radius: 1rem;
+  outline: 2px ridge $clr-primary-blue;
+  background-color: rgb(255, 255, 255);
+  z-index: 999;
+
+  &__title {
+    width: 100%;
+    height: 4rem;
+    background-color: transparent;
+    border: none;
+    padding: 0.6rem;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    font-family: "Josefin Sans", sans-serif;
+    resize: none;
+
+    &:focus {
+      outline: 1px dotted $clr-primary-blue;
+      outline-style: dashed;
+    }
+  }
+
+  &__body {
+    height: 100%;
+    padding: 1rem;
+    background-color: transparent;
+    border: none;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    line-height: 1.4;
+    font-family: "Josefin Sans", sans-serif;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .sr-only {
+    visibility: hidden;
+    position: absolute;
+  }
+}
+
+.user-guide {
+  margin-top: 4rem;
+  text-align: center;
+  opacity: 0.6;
+}
+
+.hidden {
+  display: none;
+}
+
+.sr-only {
+  visibility: hidden;
+  position: absolute;
+}
+
+#overlay {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  position: absolute;
+  z-index: 998;
+}

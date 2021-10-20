@@ -1,0 +1,28 @@
+@use "abstracts/variables" as *;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Josefin Sans", sans-serif;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 55%;
+  }
+}
+
+.container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(2rem, 1fr) minmax(25rem, 70rem) minmax(
+      2rem,
+      1fr
+    );
+  grid-template-rows: 18rem 80rem;
+}

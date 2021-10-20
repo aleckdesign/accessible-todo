@@ -1,0 +1,49 @@
+@use "abstracts/variables" as *;
+
+.theme {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 1.5rem;
+  height: 4rem;
+  width: 15rem;
+
+  &__slider {
+    width: 6rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    padding: 0 3px;
+    border-radius: 3rem;
+    background-color: $clr-dark-mode-vdark-blue;
+    cursor: pointer;
+    border: none;
+    transition: 0.5s;
+    appearance: none;
+    -webkit-appearance: none;
+    &:checked {
+      background-color: $clr-light-mode-gray;
+    }
+
+    &::before {
+      content: "";
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      background-color: $clr-primary-blue;
+      transform: translateX(0%);
+      transition: all 0.3s;
+    }
+
+    &:checked::before {
+      background-color: $clr-primary-blue;
+      transform: translateX(170%);
+      transition: all 0.3s;
+    }
+  }
+
+  &__icon {
+    height: 2rem;
+    width: 2rem;
+  }
+}
